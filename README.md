@@ -1,2 +1,1 @@
-# gluten-compare-tool
-A tool to compare result between gluten and spark
+A tool to compare result between spark and [gluten](https://github.com/oap-project/gluten) with clickhouse backend.

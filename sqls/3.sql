@@ -1,0 +1,1 @@
+select s2/0 from test_tbl3 where s2 = 1
