@@ -339,7 +339,7 @@ public class CompareService {
             KyuubiClient kyuubiClient = getKyuubiClient(glutenSession);
             SqlQueryStatusResponse response = kyuubiClient.requestToKyuubi(request, sqlQueryStatusPath, RequestMethod.GET, SqlQueryStatusResponse.class);
             if (response.getSessionId().equals(sessionId) && response.getStatementId().equals(statementId)) {
-                return Tuple2.apply(response.getState(), OBJECT_MAPPER.writeValueAsString(response.getException()));
+                return Tuple2.apply(response.getState(), response.getExceptionMessage());
             } else {
                 String errMsg = String.format("Sql query status id not equals, the id should be: %s, %s, but the query result id: %s, %s", sessionId, statementId, response.getSessionId(), response.getStatementId());
                 log.error(errMsg);

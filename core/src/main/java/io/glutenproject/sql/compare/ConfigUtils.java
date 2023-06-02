@@ -3,8 +3,8 @@ package io.glutenproject.sql.compare;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.lang.reflect.Field;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class ConfigUtils {
 

@@ -128,11 +128,10 @@ public class KyuubiClient {
         Tuple2<Integer, String> respTuple = request(httpReq);
         if (HttpStatus.SC_OK == respTuple._1) {
             String respBody = respTuple._2;
-            try {
+            if (respBody != null && !respBody.isEmpty()) {
                 return OBJECT_MAPPER.readValue(respBody, respClazz);
-            } catch (Exception e) {
-                log.error("respBody:" + respBody);
-                throw e;
+            } else {
+                return respClazz.newInstance();
             }
         } else {
             throw new RuntimeException("Request Failed, with http code:" + respTuple._1

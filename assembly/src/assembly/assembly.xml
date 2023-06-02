@@ -11,6 +11,12 @@
   <dependencySets>
     <dependencySet>
       <outputDirectory>jars</outputDirectory>
+      <excludes>
+        <exclude>ch.qos.logback:logback-core</exclude>
+        <exclude>ch.qos.logback:logback-classic</exclude>
+        <exclude>org.springframework.boot:spring-boot-starter-logging</exclude>
+        <exclude>org.apache.logging.log4j:log4j-to-slf4j</exclude>
+      </excludes>
     </dependencySet>
   </dependencySets>
 
@@ -32,8 +38,8 @@
     </fileSet>
 
     <fileSet>
-      <directory>${project.parent.basedir}/config</directory>
-      <outputDirectory>config</outputDirectory>
+      <directory>${project.parent.basedir}/conf</directory>
+      <outputDirectory>conf</outputDirectory>
       <includes>
         <include>*</include>
       </includes>
